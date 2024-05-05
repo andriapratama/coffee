@@ -1,8 +1,14 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+import { Archivo } from "next/font/google";
+
+const archivo = Archivo({
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["100", "700", "800", "900"],
+  variable: "--font-archivo",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,8 +21,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className=" bg-emerald-900 overflow-x-hidden">
+      <body className={`${archivo.variable}`}>{children}</body>
     </html>
   );
 }
